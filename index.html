@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Online Services - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <div class="logo-box">
+                <img src="assets/images/orange_logo.png" alt="Orange Logo" class="orange-logo-img">
+            </div>
+            <span>Online Services</span>
+        </div>
+        <nav class="nav">
+            <a href="#" class="nav-link">Help</a>
+            <a href="#" class="nav-link">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="main">
+    <div class="container">
+        <!-- Login/Registration Page -->
+        <section id="loginPage" class="section active">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" onclick="showAuthForm('login')">Login</button>
+                    <button class="auth-tab" onclick="showAuthForm('register')">Register</button>
+                </div>
+
+                <!-- Login Form -->
+                <div id="loginForm" class="auth-form active">
+                    <h2>Welcome Back</h2>
+                    <p class="subtitle">Login to access your Orange services</p>
+
+                    <form id="userLoginForm" class="form">
+                        <div class="input-group">
+                            <label for="loginPhone">Mobile Number</label>
+                            <input type="tel" id="loginPhone" name="loginPhone" placeholder="Enter your mobile number" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password" required>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="checkmark"></span>
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Login
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Registration Form -->
+                <div id="registerForm" class="auth-form">
+                    <h2>Create Account</h2>
+                    <p class="subtitle">Register for Orange Online Services</p>
+
+                    <form id="userRegisterForm" class="form">
+                        <div class="input-group">
+                            <label for="regFullName">Full Name</label>
+                            <input type="text" id="regFullName" name="regFullName" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="regPhone">Mobile Number</label>
+                            <input type="tel" id="regPhone" name="regPhone" placeholder="Enter your mobile number" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="regEmail">Email Address</label>
+                            <input type="email" id="regEmail" name="regEmail" placeholder="Enter your email address" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="regPassword">Password</label>
+                            <input type="password" id="regPassword" name="regPassword" placeholder="Create a password" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="regConfirmPassword">Confirm Password</label>
+                            <input type="password" id="regConfirmPassword" name="regConfirmPassword" placeholder="Confirm your password" required>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#">Terms and Conditions</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-user-plus"></i>
+                            Create Account
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Page -->
+        <section id="dashboardPage" class="section">
+            <div class="dashboard-container">
+                <div class="welcome-banner">
+                    <h1>Hello <span id="userName">Khumo</span></h1>
+                    <p>With our online service, you can buy airtime, bundles or top up your Orange Money wallet using your VISA or MASTERCARD cards. Please select the service you want below</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card" onclick="showAirtimeService()">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Buy Airtime</h3>
+                        <p>Topup your airtime</p>
+                        <button class="btn btn-primary">Proceed</button>
+                    </div>
+
+                    <div class="service-card" onclick="showBundlesService()">
+                        <div class="service-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3>Buy Bundles</h3>
+                        <p>Buy voice & data bundles</p>
+                        <button class="btn btn-primary">Proceed</button>
+                    </div>
+
+                    <div class="service-card" onclick="startPukRequest()">
+                        <div class="service-icon">
+                            <i class="fas fa-unlock"></i>
+                        </div>
+                        <h3>PUK Request</h3>
+                        <p>Unlock your SIM card</p>
+                        <button class="btn btn-primary">Proceed</button>
+                    </div>
+                </div>
+
+                <div class="orange-money-banner">
+                    <div class="banner-content">
+                        <h3>Transferring money from your bank card made easy with Orange Money</h3>
+                        <ul>
+                            <li>Access Cards/Wallet on <strong>www.orange.co.bw</strong> and click on "Orange Online" to make your transfer</li>
+                            <li>Use this service to transfer money from any Bank account to any Orange Money wallet</li>
+                        </ul>
+                    </div>
+                    <div class="banner-image">
+                        <div class="orange-money-logo">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Orange Money</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Bar -->
+        <div class="progress-container" id="progressContainer" style="display: none;">
+            <div class="container">
+                <div class="progress-bar">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Identity Verification</div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">SIM Selection</div>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">PUK Delivery</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Identity Verification Page -->
+        <section id="verificationPage" class="section">
+            <div class="form-container">
+                <h2>Identity Verification</h2>
+                <p class="subtitle">Please verify your identity to request PUK code</p>
+
+                <form id="verificationForm" class="form">
+                    <div class="input-group">
+                        <label for="idType">ID Type</label>
+                        <select id="idType" name="idType" required>
+                            <option value="">Select ID Type</option>
+                            <option value="omang">Omang (National ID)</option>
+                            <option value="passport">Passport</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="idNumber">ID/Passport Number</label>
+                        <input type="text" id="idNumber" name="idNumber" placeholder="Enter your ID or passport number" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name as per ID" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="postalAddress">Postal Address</label>
+                        <textarea id="postalAddress" name="postalAddress" placeholder="Enter your postal address" rows="3" required></textarea>
+                    </div>
+
+                    <div class="navigation-buttons">
+                        <button type="button" class="btn btn-secondary" onclick="goBackToDashboard()">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Dashboard
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-shield-alt"></i>
+                            Verify Identity
+                        </button>
+                    </div>
+                </form>
+
+                <div class="security-notice">
+                    <i class="fas fa-lock"></i>
+                    <span>Your information is encrypted and secure</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIM Selection Page -->
+        <section id="simSelectionPage" class="section">
+            <div class="form-container">
+                <h2>Select Your SIM Card</h2>
+                <p class="subtitle">Choose the SIM card you want to unlock</p>
+
+                <div class="sim-cards" id="simCardsList">
+                    <!-- SIM cards will be populated by JavaScript -->
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goBack()">
+                        <i class="fas fa-arrow-left"></i>
+                        Back
+                    </button>
+                    <button class="btn btn-primary" id="continueToDelivery" disabled onclick="proceedToDelivery()">
+                        Continue
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PUK Delivery Page -->
+        <section id="deliveryPage" class="section">
+            <div class="form-container">
+                <h2>PUK Code Retrieved Successfully!</h2>
+                <p class="subtitle">Your PUK code is ready. Choose how you'd like to receive it.</p>
+
+                <div class="puk-display">
+                    <h3>Your PUK Code:</h3>
+                    <div class="puk-code">
+                        <span id="pukCodeValue">12345678</span>
+                        <button class="copy-btn" onclick="copyPukCode()" title="Copy to clipboard">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="security-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Keep this code secure and don't share it with others</span>
+                    </div>
+                </div>
+
+                <div class="delivery-options">
+                    <h3>Send PUK code via:</h3>
+                    <div class="delivery-buttons">
+                        <button class="btn btn-primary delivery-btn" onclick="sendPukViaSMS()">
+                            <i class="fas fa-sms"></i>
+                            Send via SMS
+                        </button>
+                        <button class="btn btn-primary delivery-btn" onclick="sendPukViaEmail()">
+                            <i class="fas fa-envelope"></i>
+                            Send via Email
+                        </button>
+                    </div>
+                </div>
+
+                <div class="instructions">
+                    <h3>How to Unblock Your SIM:</h3>
+                    <ol>
+                        <li>Turn on your phone and enter the wrong PIN 3 times</li>
+                        <li>When prompted for PUK code, enter the code above</li>
+                        <li>Set a new 4 digit PIN when prompted</li>
+                        <li>Your SIM is now unblocked and ready to use</li>
+                    </ol>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" onclick="goBackToDashboard()">
+                        <i class="fas fa-home"></i>
+                        Back to Dashboard
+                    </button>
+                    <button class="btn btn-primary" onclick="requestAnotherPuk()">
+                        <i class="fas fa-redo"></i>
+                        Request Another PUK
+                    </button>
+                </div>
+
+                <div class="transaction-info">
+                    <p><strong>Transaction ID:</strong> <span id="transactionId">TXN123456789</span></p>
+                    <p><strong>Date:</strong> <span id="transactionDate"></span></p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+    <p>Processing your request...</p>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Live Chat</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">News</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Orange Botswana. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
